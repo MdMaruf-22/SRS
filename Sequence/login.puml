@@ -9,6 +9,7 @@ User -> Platform: Enter user ID
 User -> Platform: Input password
 User -> Platform: Submit login form for authentication
 Platform -> System: Authenticate user
+
 activate System
 
 alt Authentication successful
