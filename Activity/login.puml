@@ -1,0 +1,19 @@
+@startuml
+
+start
+:User navigates to the platform's login page;
+:Enters user ID;
+:Inputs password;
+:Submits login form for authentication;
+
+if (Provided user ID or password is incorrect?) then (yes)
+  :System prompts user to re-enter correct credentials;
+  :User re-enters correct credentials;
+  :Submits login form for authentication;
+else (no)
+  :Login successful;
+  :Perform other actions after successful login;
+endif
+
+stop
+@enduml

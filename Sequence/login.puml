@@ -1,0 +1,22 @@
+@startuml
+actor User
+actor System
+
+User -> Platform: Navigate to login page
+activate Platform
+
+User -> Platform: Enter user ID
+User -> Platform: Input password
+User -> Platform: Submit login form for authentication
+Platform -> System: Authenticate user
+activate System
+
+alt Authentication successful
+  System --> Platform: User authenticated, proceed to dashboard
+else Authentication failed
+  System --> Platform: Prompt user to re-enter correct credentials
+end
+
+deactivate Platform
+deactivate System
+@enduml

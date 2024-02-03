@@ -1,0 +1,41 @@
+@startuml
+
+actor Teacher
+actor Student
+
+Teacher -> Platform: Navigate to "Evaluate Work" section
+activate Platform
+
+Teacher -> Platform: Select specific assignment or problem
+Platform -> Database: Retrieve assignment or problem details
+activate Database
+Platform <-- Database: Assignment or problem details
+deactivate Database
+
+Teacher -> Platform: Review submitted solutions
+Platform -> Database: Retrieve submitted solutions
+activate Database
+Platform <-- Database: Submitted solutions
+deactivate Database
+
+Teacher -> Platform: Assign grades and provide feedback
+note right: Teacher evaluates solutions and provides feedback
+
+alt Solution requires clarification
+  Teacher -> Student: Ask for further information
+else
+  Teacher -> Platform: Update evaluation status
+  Platform -> Database: Update evaluation status
+  activate Database
+  Platform <-- Database: Updated status
+  deactivate Database
+  Teacher <-- Platform: Evaluation status updated
+  Teacher -> Platform: Allow students to view assessed work
+  Platform -> Student: Notify about evaluated work availability
+  Student -> Platform: View assessed work
+  Platform -> Database: Retrieve assessed work details
+  activate Database
+  Platform <-- Database: Assessed work details
+  deactivate Database
+  end
+@enduml

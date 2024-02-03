@@ -1,0 +1,18 @@
+@startuml
+
+actor User
+actor System
+
+User -> Platform: Log into the platform
+activate Platform
+
+User -> Platform: Navigate to "View Rankings" section
+Platform -> System: Retrieve individual and class rankings
+activate System
+Platform <-- System: Rankings data
+deactivate System
+
+User -> Platform: Explore individual and class rankings
+
+deactivate Platform
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+|Student|
+start
+:Student navigates to "Message Teacher" section;
+:Selects the teacher to communicate with;
+:Composes and sends a message seeking clarification or guidance;
+
+|System|
+if (Teacher available for messaging?) then (Yes)
+  |Teacher|
+  :Receives message;
+  :Responds to student's query;
+else (No)
+  :Provide notification;
+  :Suggest alternative communication methods or times;
+endif
+
+|Student|
+stop
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+start
+:Student navigates to "Practice" section;
+
+:Student browses through available C programming problems;
+
+:Student selects a specific problem;
+
+:Student attempts to solve the problem using the programming interface;
+
+:Student submits the solution for evaluation;
+
+if (Solution is incorrect?) then (yes)
+  :System provides feedback, including hints and suggestions for improvement;
+else (no)
+  :Solution is correct;
+  :Proceed to next step or complete practice;
+endif
+
+stop
+@enduml

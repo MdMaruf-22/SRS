@@ -1,0 +1,34 @@
+@startuml
+
+|Student|
+start
+:Student navigates to problem-solving interface;
+:Attempts to solve a C programming problem;
+:Requests hints for additional guidance;
+
+|System|
+:Check if user has received three hints;
+if (Yes)
+  :Notify user that no more hints are available;
+else (No)
+  :Provide the first hint;
+  :User continues solving the problem;
+
+  :After 30 minutes, check if user has received second hint;
+  if (Yes)
+    :Notify user that the next hint is available;
+  else (No)
+    :Wait until 30 minutes have passed from the first hint;
+    :Provide the second hint;
+  endif
+
+  :User continues solving the problem;
+
+  :After one hour from the first hint, provide the third hint;
+endif
+
+|Student|
+:User continues solving the problem or decides to stop;
+stop
+
+@enduml

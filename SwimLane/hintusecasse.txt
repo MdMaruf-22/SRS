@@ -1,0 +1,14 @@
+Main Flow:
+Student navigates to the problem-solving interface.
+Attempts to solve a C programming problem.
+Requests hints for additional guidance.
+System checks if the user has received three hints.
+If yes, system notifies the user that no more hints are available.
+If no, system provides the first hint.
+User continues solving the problem.
+After 30 minutes, system checks if the user has received the second hint.
+If yes, system notifies the user that the next hint is available.
+If no, system waits until 30 minutes have passed from the first hint and then provides the second hint.
+User continues solving the problem.
+After one hour from the first hint, system provides the third hint.
+User continues solving the problem or decides to stop.

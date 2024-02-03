@@ -1,0 +1,15 @@
+@startuml
+
+|User|
+start
+:User logs into the platform;
+:Navigates to "View Rankings" section;
+:Explores individual and class rankings;
+
+|Platform|
+:Display individual and class rankings based on performance metrics;
+
+|User|
+stop
+
+@enduml

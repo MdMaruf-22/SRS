@@ -1,0 +1,18 @@
+@startuml
+
+start
+:Teacher navigates to the "Arrange Contests" section;
+
+:Teacher defines contest parameters, including duration and rules;
+
+:Teacher selects C programming problems from the platform's collection for the contest;
+
+if (Suitable problems are available?) then (yes)
+  :Teacher invites students to participate by specifying contest details;
+else (no)
+  :System notifies the teacher;
+  :System suggests alternatives or allows the addition of new problems;
+endif
+
+stop
+@enduml

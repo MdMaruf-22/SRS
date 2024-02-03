@@ -1,0 +1,29 @@
+@startuml
+
+actor Student
+actor Teacher
+actor System
+
+Student -> Platform: Navigate to "Message Teacher" section
+activate Platform
+
+Student -> Platform: Select teacher to communicate with
+Platform -> System: Check if teacher is available for messaging
+activate System
+alt Teacher is available
+  System -> Platform: Notify that the selected teacher is available
+  Platform --> Student: Student proceeds to compose and send a message
+  Student -> Platform: Compose and send message
+  Platform -> Teacher: Deliver message to the selected teacher
+  activate Teacher
+  Teacher --> Platform: Respond to the message
+  Platform --> Student: Notify student about the response
+  deactivate Teacher
+else Teacher is not available
+  System -> Platform: Notify that the selected teacher is not available
+  Platform --> Student: Notify student and suggest alternative communication methods or times
+end
+
+deactivate Platform
+deactivate System
+@enduml

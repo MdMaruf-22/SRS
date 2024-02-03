@@ -1,0 +1,17 @@
+@startuml
+
+start
+:Teacher navigates to the "Evaluate Work" section;
+
+:Teacher selects a specific assignment or problem for evaluation;
+
+:Teacher reviews submitted solutions, assigns grades, and provides constructive feedback;
+
+if (Student's solution requires additional clarification?) then (yes)
+  :Teacher asks for further information before completing the evaluation;
+endif
+
+:Teacher updates the evaluation status, allowing students to view their assessed work;
+
+stop
+@enduml

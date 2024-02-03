@@ -1,0 +1,38 @@
+@startuml
+
+|User|
+start
+:User navigates to the platform's login page;
+:Enters the provided user ID in the designated field;
+:Inputs the associated password;
+:Submits the login form for authentication;
+
+|System|
+if (Valid credentials?) then (Yes)
+  :Authenticate user;
+  :Redirect to user's dashboard;
+else (No)
+  :Prompt user to re-enter correct credentials;
+endif
+
+|User|
+if (Re-enter credentials) then (Yes)
+  :Enters the correct user ID;
+  :Inputs the correct password;
+  :Submits the login form for authentication;
+else (No)
+  :Exit;
+endif
+
+|System|
+if (Valid credentials?) then (Yes)
+  :Authenticate user;
+  :Redirect to user's dashboard;
+else (No)
+  :Prompt user to contact support;
+endif
+
+|User|
+stop
+
+@enduml

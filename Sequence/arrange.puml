@@ -1,0 +1,33 @@
+@startuml
+
+actor Teacher
+actor System
+actor Student
+
+Teacher -> Platform: Navigate to "Arrange Contests" section
+activate Platform
+
+Teacher -> Platform: Define contest parameters
+Teacher -> Platform: Select C programming problems
+Platform -> Database: Retrieve available C programming problems
+activate Database
+Platform <-- Database: Available C programming problems
+deactivate Database
+
+Teacher -> Platform: Invite students to participate
+Platform -> System: Check for suitable problems
+activate System
+alt Suitable problems available
+  System -> Platform: Notify teacher that suitable problems are available
+  Platform --> Teacher: Teacher proceeds to invite students
+  loop Invite students
+    Teacher -> Student: Invite to participate in the contest
+  end
+else No suitable problems available
+  System -> Platform: Notify teacher that no suitable problems are available
+  Platform --> Teacher: Notify and suggest alternatives or allow addition of new problems
+end
+
+deactivate Platform
+deactivate System
+@enduml

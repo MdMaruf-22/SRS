@@ -1,0 +1,46 @@
+@startuml
+
+actor Student
+actor System
+
+Student -> Platform: Navigate to problem-solving interface
+activate Platform
+
+Student -> Platform: Attempt to solve a C programming problem
+Platform -> System: Request hints for additional guidance
+activate System
+
+alt System checks if user has received three hints?
+  System --> Platform: Notify user that no more hints are available
+else
+  System --> Platform: Provide the first hint
+  Platform -> Student: Receive the first hint
+end
+
+Student -> Platform: Continue solving the problem
+
+System --> System: Set a timer for 30 minutes
+
+Platform -> System: Request the second hint after 30 minutes
+
+alt System checks if user has received the second hint?
+  System --> Platform: Notify user that the next hint is available
+else
+  System --> Platform: Provide the second hint
+  Platform -> Student: Receive the second hint
+end
+
+Student -> Platform: Continue solving the problem
+
+System --> System: Set a timer for one hour
+
+Platform -> System: Request the third hint after one hour
+
+System --> Platform: Provide the third hint
+Platform -> Student: Receive the third hint
+
+Student -> Platform: Continue solving the problem or decide to stop
+
+deactivate Platform
+deactivate System
+@enduml

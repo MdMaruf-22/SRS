@@ -1,0 +1,23 @@
+@startuml
+
+actor User
+actor System
+
+User -> Platform: Log into the platform
+activate Platform
+
+User -> Platform: Navigate to "View Problems" section
+Platform -> System: Retrieve categorized list of C programming problems
+activate System
+Platform <-- System: Categorized list of problems
+deactivate System
+
+User -> Platform: Explore categorized list of C programming problems
+User -> Platform: Select specific problem of interest
+Platform -> System: Retrieve statement and details of the selected problem
+activate System
+Platform <-- System: Statement and details of the problem
+deactivate System
+
+deactivate Platform
+@enduml

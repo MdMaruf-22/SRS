@@ -1,0 +1,14 @@
+@startuml
+start
+:User logs into the platform;
+
+:User navigates to "View Problems" section;
+
+:User explores categorized list of C programming problems;
+
+:User selects a specific problem;
+
+:View problem statement and details;
+
+stop
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+
+start
+:User (Student or Teacher) logs into the platform;
+
+:User navigates to "View Rankings" section;
+
+:User explores individual and class rankings based on performance metrics;
+
+stop
+@enduml

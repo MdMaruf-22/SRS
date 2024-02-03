@@ -1,0 +1,28 @@
+@startuml
+actor Student
+actor System
+
+Student -> Platform: Navigate to "Practice" section
+activate Platform
+
+Student -> Platform: Browse available C programming problems
+Platform -> System: Retrieve list of C programming problems
+activate System
+Platform <-- System: List of C programming problems
+deactivate System
+
+Student -> Platform: Select specific problem
+Student -> Platform: Attempt to solve the chosen problem
+Platform -> Student: Provide programming interface
+Student -> Platform: Submit solution for evaluation
+Platform -> System: Evaluate solution
+activate System
+
+alt Solution is incorrect
+  System --> Platform: Provide feedback, hints, and suggestions for improvement
+else Solution is correct
+  System --> Platform: Solution is correct
+end
+deactivate Platform
+deactivate System
+@enduml
